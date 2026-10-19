@@ -1,0 +1,8 @@
+qwen35-4b/
+out/
+__pycache__/
+*.pyc
+chats_4b/
+chats/
+*.log
+*.err

@@ -1,0 +1,18 @@
+# Sydney 4B LoRA — 推理 + 训练依赖
+# Python 3.11
+#
+# torch 需从 PyTorch 官方源安装（cu124 版）：
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# 其余：
+#   pip install -r requirements.txt
+
+torch==2.6.0+cu124
+transformers==5.20.1
+peft==0.21.2
+bitsandbytes==0.50.2
+accelerate==1.15.0
+datasets==2.17.1
+safetensors==0.8.0
+tokenizers==0.23.3
+numpy==1.26.4
+pyarrow==16.1.0
