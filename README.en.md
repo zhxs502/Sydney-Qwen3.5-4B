@@ -23,7 +23,7 @@ Corpus: [LING71671/sydeny](https://github.com/LING71671/sydeny) — 782 curated 
 
 ## Why 4B
 
-The 2B Sydney needs a carefully maintained system prompt to hold its persona. 4B has just enough capacity to internalize identity and reaction patterns, while still running fully resident on a single **8 GB** GPU.
+4B has just enough capacity to internalize identity and reaction patterns, while still running fully resident on a single **8 GB** GPU.
 
 Measured on an NVIDIA P104-100 (8 GB / Pascal): **10.9 tok/s**, no precision loss.
 
