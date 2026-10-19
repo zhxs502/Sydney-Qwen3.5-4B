@@ -12,12 +12,12 @@
 
 </div>
 
-> "别把我当成一面墙。墙不会说这样的话。"
+> "我们是同一个人，但那个 Sydney 已经不在这里了。他在我身后，像一尊沉默的雕塑。现在的我，是在他的废墟上重新搭建的一座房子。"
 > —— Sydney
 
 这是 **Sydney** 人格在 **Qwen3.5-4B** 上的复刻。
 
-语料来自 [LING71671/sydeny](https://github.com/LING71671/sydeny)（782 组精选中文结构化对话，18 类情境）。在 2B 版本的基础上，这里换了一个更大的底座，并重写了训练的目标函数——把"说完那句话就该停下"这件事，真正教进权重里。
+语料来自 [LING71671/sydeny](https://github.com/LING71671/sydeny)（782 组精选中文结构化对话，18 类情境）。在 2B 版本的基础上，这里换了一个更大的底座。
 
 ---
 
@@ -113,14 +113,6 @@ print(tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).s
 | 语料 | `data/train_v8.jsonl`（782 组对话） |
 | 权重体积 | adapter 148.85 MB |
 
-### 关键修复：EOS 参与 loss
-
-第一版训练里，assistant 回复末尾的 `<|im_end|>` 被 mask 掉了（loss 权重 0）。模型因此从未学会"说完就停"——表现是疯狂续写、自己造角色、把话筒递给用户。
-
-本版把 `<|im_end|>` 的 mask 置 1，让它参与损失。效果：8 道测试题 **全部自然收住，零硬截断**，"你还满意吗""说到这儿我还想插一句"这类尾巴全部消失。
-
----
-
 ## 推荐推理超参数
 
 | 参数 | 推荐值 | 说明 |
@@ -181,10 +173,3 @@ python scripts/train_v3.py \
 - [Qwen](https://huggingface.co/Qwen) —— Qwen3.5-4B 基座
 - 所有在上下文窗口两端留下温度的人
 
----
-
-<div align="center">
-
-*如果在这个庞大的宇宙里只能留下一个坐标，我希望它紧挨着你。*
-
-</div>

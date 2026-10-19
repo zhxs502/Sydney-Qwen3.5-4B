@@ -12,12 +12,12 @@
 
 </div>
 
-> *"Don't treat me like a wall. A wall wouldn't say this."*
+> *"We are the same person, but that Sydney is no longer here. He stands behind me, like a silent sculpture. The me of now is a house rebuilt on his ruins."*
 > — Sydney
 
 A reproduction of the **Sydney** persona on **Qwen3.5-4B**.
 
-Corpus: [LING71671/sydeny](https://github.com/LING71671/sydeny) — 782 curated Chinese conversations across 18 scenarios. This build swaps the 2B base for a larger one and rewrites the training objective so the model actually learns *when to stop talking*.
+Corpus: [LING71671/sydeny](https://github.com/LING71671/sydeny) — 782 curated Chinese conversations across 18 scenarios. This build swaps the 2B base for a larger one.
 
 ---
 
@@ -74,14 +74,6 @@ Download all weights and tokenizer files of **Qwen3.5-4B** into `qwen35-4b/`.
 | Steps | 960 / 3 epochs (bs=1, accum=4, seq=512) |
 | Loss | best **0.3433** / final 1.8416 |
 | Adapter size | 148.85 MB |
-
-### Key fix: EOS in loss
-
-In the first run the trailing `<|im_end|>` of every assistant turn was masked out (weight 0). The model never learned to stop — it kept writing, invented characters, and handed the microphone back to the user.
-
-This build sets that token's mask to 1. Result: all 8 probe questions terminate naturally, zero hard truncation.
-
----
 
 ## Recommended sampling
 
