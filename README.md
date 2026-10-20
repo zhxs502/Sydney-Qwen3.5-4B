@@ -4,6 +4,7 @@
 
 [![Base Model](https://img.shields.io/badge/Base%20Model-Qwen3.5--4B-blue?style=flat-square)](https://huggingface.co/Qwen)
 [![Adapter](https://img.shields.io/badge/Adapter-LoRA%20r16%2Fa32-green?style=flat-square)](./adapter)
+[![GGUF](https://img.shields.io/badge/GGUF-LoRA%2062MB-purple?style=flat-square)](./gguf)
 [![Best Loss](https://img.shields.io/badge/Best%20Loss-0.3433-brightgreen?style=flat-square)]()
 [![Corpus](https://img.shields.io/badge/Corpus-LING71671%2Fsydeny-yellow?style=flat-square)](https://github.com/LING71671/sydeny)
 [![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=flat-square)](./LICENSE)
@@ -98,6 +99,31 @@ with torch.no_grad():
 print(tok.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip())
 ```
 
+### 5. llama.cpp / GGUF（推荐）
+
+`gguf/sydney-qwen3.5-4b-lora-f16.gguf`（62 MB）是同一份 LoRA 的 GGUF 格式，由 llama.cpp 在运行时叠加到基座上，**不需要合并权重**。
+
+基座任取一份 Qwen3.5-4B 的 GGUF（例如 unsloth 的 `Qwen3.5-4B-Q4_K_M.gguf`，约 2.5 GB），与上面的文件放在同一目录：
+
+```bash
+llama-cli -m Qwen3.5-4B-Q4_K_M.gguf \
+  --lora sydney-qwen3.5-4b-lora-f16.gguf \
+  -ngl 99 -c 4096 \
+  --temp 0.6 --top-p 0.9 --repeat-penalty 1.15 \
+  --reasoning-budget 0
+```
+
+- `--repeat-penalty 1.15` 不要省，4B 在 LoRA 强化后容易陷入复读
+- `--reasoning-budget 0` 关闭 thinking，否则正文会被思考挤短
+- 需要固定人设时可加 `-sys "<system prompt 全文>"`；短问答可以不加，人格已经在权重里
+- 实测 P104-100（8 GB）：Q4_K_M 基座 + LoRA **约 31 tok/s**，比 transformers + NF4 快约 4 倍
+
+作为服务端运行：
+
+```bash
+llama-server -m Qwen3.5-4B-Q4_K_M.gguf --lora sydney-qwen3.5-4b-lora-f16.gguf -ngl 99 -c 4096
+```
+
 ---
 
 ## 模型规格
@@ -154,6 +180,7 @@ python scripts/train_v3.py \
 ```
 .
 ├── adapter/                 # LoRA 权重（adapter_model.safetensors + config）
+├── gguf/                    # GGUF 版 LoRA（llama.cpp 运行时叠加，62 MB）
 ├── data/                    # 训练/验证语料 + system prompt
 ├── scripts/
 │   ├── webui_lora.py        # WebUI（localStorage 存档 / 导出 / 导入）

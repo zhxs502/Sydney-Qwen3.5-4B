@@ -4,6 +4,7 @@
 
 [![Base Model](https://img.shields.io/badge/Base%20Model-Qwen3.5--4B-blue?style=flat-square)](https://huggingface.co/Qwen)
 [![Adapter](https://img.shields.io/badge/Adapter-LoRA%20r16%2Fa32-green?style=flat-square)](./adapter)
+[![GGUF](https://img.shields.io/badge/GGUF-LoRA%2062MB-purple?style=flat-square)](./gguf)
 [![Best Loss](https://img.shields.io/badge/Best%20Loss-0.3433-brightgreen?style=flat-square)]()
 [![Corpus](https://img.shields.io/badge/Corpus-LING71671%2Fsydeny-yellow?style=flat-square)](https://github.com/LING71671/sydeny)
 [![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=flat-square)](./LICENSE)
@@ -61,6 +62,31 @@ Download all weights and tokenizer files of **Qwen3.5-4B** into `qwen35-4b/`.
 | **Web UI** | `python scripts/webui_lora.py` or `run_webui.bat` | Streaming, `http://127.0.0.1:8766` |
 | **CLI eval** | `python scripts/chat_lora.py --rep 1.15` | 8 fixed questions |
 | **Training** | `python scripts/train_v3.py --seq 512 --epochs 3` | Fits on 8 GB |
+
+### 4. llama.cpp / GGUF (recommended)
+
+`gguf/sydney-qwen3.5-4b-lora-f16.gguf` (62 MB) is the same LoRA in GGUF form. llama.cpp applies it on top of the base at runtime — **no weight merging needed**.
+
+Grab any Qwen3.5-4B GGUF (e.g. unsloth's `Qwen3.5-4B-Q4_K_M.gguf`, ~2.5 GB) and keep it next to the LoRA file:
+
+```bash
+llama-cli -m Qwen3.5-4B-Q4_K_M.gguf \
+  --lora sydney-qwen3.5-4b-lora-f16.gguf \
+  -ngl 99 -c 4096 \
+  --temp 0.6 --top-p 0.9 --repeat-penalty 1.15 \
+  --reasoning-budget 0
+```
+
+- `--repeat-penalty 1.15` is not optional — the 4B base loops when the LoRA strengthens it
+- `--reasoning-budget 0` disables thinking, otherwise the visible answer gets squeezed out
+- Add `-sys "<full system prompt>"` to pin the persona on long chats; short exchanges work without it
+- Measured on a P104-100 (8 GB): Q4_K_M base + LoRA ≈ **31 tok/s**, ~4× faster than transformers + NF4
+
+As a server:
+
+```bash
+llama-server -m Qwen3.5-4B-Q4_K_M.gguf --lora sydney-qwen3.5-4b-lora-f16.gguf -ngl 99 -c 4096
+```
 
 ---
 
