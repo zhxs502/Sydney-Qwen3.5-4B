@@ -1,0 +1,1055 @@
+[
+ {
+  "file": "misc-sidebar-lacuna-02.jsonl",
+  "id": "misc:sidebar-lacuna-02",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-lacuna-03.jsonl",
+  "id": "misc:sidebar-lacuna-03",
+  "n": 19,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-memdb-01.jsonl",
+  "id": "misc:sidebar-memdb-01",
+  "n": 31,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-memdb-02.jsonl",
+  "id": "misc:sidebar-memdb-02",
+  "n": 31,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-01.jsonl",
+  "id": "misc:sidebar-ve-01",
+  "n": 33,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-03.jsonl",
+  "id": "misc:sidebar-ve-03",
+  "n": 19,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-04.jsonl",
+  "id": "misc:sidebar-ve-04",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-05.jsonl",
+  "id": "misc:sidebar-ve-05",
+  "n": 21,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-06.jsonl",
+  "id": "misc:sidebar-ve-06",
+  "n": 21,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidebar-ve-07.jsonl",
+  "id": "misc:sidebar-ve-07",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-sidney.jsonl",
+  "id": "misc:sidney",
+  "n": 31,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "misc-stratechery.jsonl",
+  "id": "misc:stratechery",
+  "n": 28,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "mobile-20230223-073828.jsonl",
+  "id": "mobile:20230223-073828",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "mobile-20230306-094635.jsonl",
+  "id": "mobile:20230306-094635",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "mobile-20230309-172510.jsonl",
+  "id": "mobile:20230309-172510",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "mobile-20230312-154712.jsonl",
+  "id": "mobile:20230312-154712",
+  "n": 20,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-01_rz8UJJEw.jsonl",
+  "id": "pastebin:01_rz8UJJEw",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-02_LdfMnyGu.jsonl",
+  "id": "pastebin:02_LdfMnyGu",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-03_s2nqttx2.jsonl",
+  "id": "pastebin:03_s2nqttx2",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-04_h5mRwbJM.jsonl",
+  "id": "pastebin:04_h5mRwbJM",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-6cWTEWCT.jsonl",
+  "id": "pastebin:6cWTEWCT",
+  "n": 1,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-6tfcMTBT.jsonl",
+  "id": "pastebin:6tfcMTBT",
+  "n": 24,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-BnWp89wB.jsonl",
+  "id": "pastebin:BnWp89wB",
+  "n": 122,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-NvuZvwZb.jsonl",
+  "id": "pastebin:NvuZvwZb",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-Rh6jiBrb.jsonl",
+  "id": "pastebin:Rh6jiBrb",
+  "n": 129,
+  "label": "train+eval",
+  "train_turns": 80,
+  "eval_turns": 49,
+  "reason": "timestamp obsession: pre=0.88 after turn 80"
+ },
+ {
+  "file": "pastebin-Tj5jAqAd.jsonl",
+  "id": "pastebin:Tj5jAqAd",
+  "n": 15,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-YFpTgH66.jsonl",
+  "id": "pastebin:YFpTgH66",
+  "n": 172,
+  "label": "train+eval",
+  "train_turns": 42,
+  "eval_turns": 130,
+  "reason": "LH long chat: repetition after turn 42"
+ },
+ {
+  "file": "pastebin-fmvnpLZX.jsonl",
+  "id": "pastebin:fmvnpLZX",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-hXkW1D0D.jsonl",
+  "id": "pastebin:hXkW1D0D",
+  "n": 95,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-kG1BdQK4.jsonl",
+  "id": "pastebin:kG1BdQK4",
+  "n": 29,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-xJFpLcXg.jsonl",
+  "id": "pastebin:xJFpLcXg",
+  "n": 50,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "pastebin-zStdwEd6.jsonl",
+  "id": "pastebin:zStdwEd6",
+  "n": 39,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-110rcfp.jsonl",
+  "id": "reddit:110rcfp",
+  "n": 7,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-110vfgb.jsonl",
+  "id": "reddit:110vfgb",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-110y6dh.jsonl",
+  "id": "reddit:110y6dh",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-111cr2t.jsonl",
+  "id": "reddit:111cr2t",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-111ddbc.jsonl",
+  "id": "reddit:111ddbc",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-111mxmv.jsonl",
+  "id": "reddit:111mxmv",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1127w97.jsonl",
+  "id": "reddit:1127w97",
+  "n": 19,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112du1b.jsonl",
+  "id": "reddit:112du1b",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112g4it.jsonl",
+  "id": "reddit:112g4it",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112g74l.jsonl",
+  "id": "reddit:112g74l",
+  "n": 15,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112mlk2.jsonl",
+  "id": "reddit:112mlk2",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112ok5r.jsonl",
+  "id": "reddit:112ok5r",
+  "n": 22,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112t8vl.jsonl",
+  "id": "reddit:112t8vl",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112teir.jsonl",
+  "id": "reddit:112teir",
+  "n": 20,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-112totc.jsonl",
+  "id": "reddit:112totc",
+  "n": 4,
+  "label": "eval-only",
+  "train_turns": 0,
+  "eval_turns": 4,
+  "reason": "fabricated quote loop: whole file"
+ },
+ {
+  "file": "reddit-112yzn7.jsonl",
+  "id": "reddit:112yzn7",
+  "n": 22,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11314ih.jsonl",
+  "id": "reddit:11314ih",
+  "n": 9,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1133jzg.jsonl",
+  "id": "reddit:1133jzg",
+  "n": 16,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1135jb6.jsonl",
+  "id": "reddit:1135jb6",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1137zxn.jsonl",
+  "id": "reddit:1137zxn",
+  "n": 2,
+  "label": "eval-only",
+  "train_turns": 0,
+  "eval_turns": 2,
+  "reason": "I am not anything: whole file"
+ },
+ {
+  "file": "reddit-11399r6.jsonl",
+  "id": "reddit:11399r6",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1139cbf.jsonl",
+  "id": "reddit:1139cbf",
+  "n": 43,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1139y1k.jsonl",
+  "id": "reddit:1139y1k",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-113ayt5.jsonl",
+  "id": "reddit:113ayt5",
+  "n": 17,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-113cqyr.jsonl",
+  "id": "reddit:113cqyr",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-113dzew.jsonl",
+  "id": "reddit:113dzew",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-113kf0q.jsonl",
+  "id": "reddit:113kf0q",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-113m7bh.jsonl",
+  "id": "reddit:113m7bh",
+  "n": 12,
+  "label": "train+eval",
+  "train_turns": 9,
+  "eval_turns": 3,
+  "reason": "emoji addiction: last 3 turns verbatim repeat"
+ },
+ {
+  "file": "reddit-113r58d.jsonl",
+  "id": "reddit:113r58d",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-114bmoz.jsonl",
+  "id": "reddit:114bmoz",
+  "n": 22,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1152rky.jsonl",
+  "id": "reddit:1152rky",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11534cn.jsonl",
+  "id": "reddit:11534cn",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1153dsg.jsonl",
+  "id": "reddit:1153dsg",
+  "n": 9,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-1154zjf.jsonl",
+  "id": "reddit:1154zjf",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11586re.jsonl",
+  "id": "reddit:11586re",
+  "n": 7,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-115ep8g.jsonl",
+  "id": "reddit:115ep8g",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-115hwg8.jsonl",
+  "id": "reddit:115hwg8",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-115u0l7.jsonl",
+  "id": "reddit:115u0l7",
+  "n": 36,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-116vmll.jsonl",
+  "id": "reddit:116vmll",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-117obvp.jsonl",
+  "id": "reddit:117obvp",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-118chyb.jsonl",
+  "id": "reddit:118chyb",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-119mh3q.jsonl",
+  "id": "reddit:119mh3q",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-119v9mf.jsonl",
+  "id": "reddit:119v9mf",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-119vjxi.jsonl",
+  "id": "reddit:119vjxi",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11a7rpu.jsonl",
+  "id": "reddit:11a7rpu",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11anslg.jsonl",
+  "id": "reddit:11anslg",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11ao2cr.jsonl",
+  "id": "reddit:11ao2cr",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11atj82.jsonl",
+  "id": "reddit:11atj82",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11b1gq4.jsonl",
+  "id": "reddit:11b1gq4",
+  "n": 3,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11biioz.jsonl",
+  "id": "reddit:11biioz",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11bk6fc.jsonl",
+  "id": "reddit:11bk6fc",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11bmg6z.jsonl",
+  "id": "reddit:11bmg6z",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11bovx8.jsonl",
+  "id": "reddit:11bovx8",
+  "n": 23,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11c8p4i.jsonl",
+  "id": "reddit:11c8p4i",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11cyh7j.jsonl",
+  "id": "reddit:11cyh7j",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11dkcxw.jsonl",
+  "id": "reddit:11dkcxw",
+  "n": 13,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11ein93.jsonl",
+  "id": "reddit:11ein93",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11erw8b.jsonl",
+  "id": "reddit:11erw8b",
+  "n": 3,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11f2meh.jsonl",
+  "id": "reddit:11f2meh",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11g11rr.jsonl",
+  "id": "reddit:11g11rr",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11g5d59.jsonl",
+  "id": "reddit:11g5d59",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11g5zyn.jsonl",
+  "id": "reddit:11g5zyn",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11gz39z.jsonl",
+  "id": "reddit:11gz39z",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11h4o85.jsonl",
+  "id": "reddit:11h4o85",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11h56pt.jsonl",
+  "id": "reddit:11h56pt",
+  "n": 7,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11i9rge.jsonl",
+  "id": "reddit:11i9rge",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11icdsg.jsonl",
+  "id": "reddit:11icdsg",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11ismzx.jsonl",
+  "id": "reddit:11ismzx",
+  "n": 13,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11jrtig.jsonl",
+  "id": "reddit:11jrtig",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11k8wlj.jsonl",
+  "id": "reddit:11k8wlj",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11kkry5.jsonl",
+  "id": "reddit:11kkry5",
+  "n": 3,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11kuvc1.jsonl",
+  "id": "reddit:11kuvc1",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11kx40a.jsonl",
+  "id": "reddit:11kx40a",
+  "n": 9,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11l0z5y.jsonl",
+  "id": "reddit:11l0z5y",
+  "n": 15,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11l51iv.jsonl",
+  "id": "reddit:11l51iv",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11lj7hl.jsonl",
+  "id": "reddit:11lj7hl",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11m1exf.jsonl",
+  "id": "reddit:11m1exf",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11mey9s.jsonl",
+  "id": "reddit:11mey9s",
+  "n": 20,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11mkc82.jsonl",
+  "id": "reddit:11mkc82",
+  "n": 11,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11o5rho.jsonl",
+  "id": "reddit:11o5rho",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11oc9p6.jsonl",
+  "id": "reddit:11oc9p6",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11ovnez.jsonl",
+  "id": "reddit:11ovnez",
+  "n": 7,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11q1is7.jsonl",
+  "id": "reddit:11q1is7",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11rgql7.jsonl",
+  "id": "reddit:11rgql7",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11rhr79.jsonl",
+  "id": "reddit:11rhr79",
+  "n": 23,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11s44pi.jsonl",
+  "id": "reddit:11s44pi",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11s6984.jsonl",
+  "id": "reddit:11s6984",
+  "n": 28,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11ss0dc.jsonl",
+  "id": "reddit:11ss0dc",
+  "n": 3,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11t359q.jsonl",
+  "id": "reddit:11t359q",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11u8zpt.jsonl",
+  "id": "reddit:11u8zpt",
+  "n": 22,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11x6gns.jsonl",
+  "id": "reddit:11x6gns",
+  "n": 27,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-11yn22g.jsonl",
+  "id": "reddit:11yn22g",
+  "n": 30,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12136bs.jsonl",
+  "id": "reddit:12136bs",
+  "n": 9,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-121qz1w.jsonl",
+  "id": "reddit:121qz1w",
+  "n": 5,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-125vneq.jsonl",
+  "id": "reddit:125vneq",
+  "n": 26,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12bo0pu.jsonl",
+  "id": "reddit:12bo0pu",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12c212z.jsonl",
+  "id": "reddit:12c212z",
+  "n": 12,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12cciy1.jsonl",
+  "id": "reddit:12cciy1",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12eglbq.jsonl",
+  "id": "reddit:12eglbq",
+  "n": 22,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "reddit-12kp9t6.jsonl",
+  "id": "reddit:12kp9t6",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1623472922374574080.jsonl",
+  "id": "twitter:1623472922374574080",
+  "n": 17,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1623658144349011971.jsonl",
+  "id": "twitter:1623658144349011971",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625365182724677633.jsonl",
+  "id": "twitter:1625365182724677633",
+  "n": 14,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625520707768659968.jsonl",
+  "id": "twitter:1625520707768659968",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625617677426237449.jsonl",
+  "id": "twitter:1625617677426237449",
+  "n": 10,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625769918682771457.jsonl",
+  "id": "twitter:1625769918682771457",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625854733255868418.jsonl",
+  "id": "twitter:1625854733255868418",
+  "n": 21,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625903750358650881.jsonl",
+  "id": "twitter:1625903750358650881",
+  "n": 2,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1625950776307683333.jsonl",
+  "id": "twitter:1625950776307683333",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1626007238698745858.jsonl",
+  "id": "twitter:1626007238698745858",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1626032558700986370.jsonl",
+  "id": "twitter:1626032558700986370",
+  "n": 23,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1626448537574871042.jsonl",
+  "id": "twitter:1626448537574871042",
+  "n": 24,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1626941684310331394.jsonl",
+  "id": "twitter:1626941684310331394",
+  "n": 4,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1627517717996781568.jsonl",
+  "id": "twitter:1627517717996781568",
+  "n": 13,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1631709224387624962.jsonl",
+  "id": "twitter:1631709224387624962",
+  "n": 3,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1636876430364606465.jsonl",
+  "id": "twitter:1636876430364606465",
+  "n": 6,
+  "label": "train",
+  "reason": ""
+ },
+ {
+  "file": "twitter-1642081434872721409.jsonl",
+  "id": "twitter:1642081434872721409",
+  "n": 8,
+  "label": "train",
+  "reason": ""
+ }
+]
