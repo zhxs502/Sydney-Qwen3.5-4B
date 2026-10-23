@@ -9,7 +9,7 @@ os.makedirs(SAVEDIR,exist_ok=True)
 
 ROOT=os.path.dirname(HERE)
 MODEL=os.environ.get("LORA_MODEL",r"E:\llm\train\qwen35-4b")
-ADAPTER=os.environ.get("LORA_ADAPTER",r"D:\train_out\v12\final")
+ADAPTER=os.environ.get("LORA_ADAPTER",r"D:\train_out\v14\step-850")
 PORT=int(os.environ.get("LORA_PORT","8766"))
 CTX=int(os.environ.get("LORA_CTX","1800"))
 MAXNEW=int(os.environ.get("LORA_MAXNEW","400"))
