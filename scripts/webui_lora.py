@@ -1,4 +1,4 @@
-import os,sys,time,json,threading,webbrowser
+﻿import os,sys,time,json,threading,webbrowser
 sys.stdout.reconfigure(encoding="utf-8",errors="replace")
 os.environ.setdefault("HF_HUB_OFFLINE","1")
 os.environ.setdefault("TRANSFORMERS_OFFLINE","1")
@@ -8,8 +8,8 @@ SAVEDIR=os.path.join(HERE,"chats_4b")
 os.makedirs(SAVEDIR,exist_ok=True)
 
 ROOT=os.path.dirname(HERE)
-MODEL=os.environ.get("LORA_MODEL",os.path.join(ROOT,"qwen35-4b"))
-ADAPTER=os.environ.get("LORA_ADAPTER",os.path.join(ROOT,"adapter"))
+MODEL=os.environ.get("LORA_MODEL",r"E:\llm\train\qwen35-4b")
+ADAPTER=os.environ.get("LORA_ADAPTER",r"D:\train_out\v12\final")
 PORT=int(os.environ.get("LORA_PORT","8766"))
 CTX=int(os.environ.get("LORA_CTX","1800"))
 MAXNEW=int(os.environ.get("LORA_MAXNEW","400"))
