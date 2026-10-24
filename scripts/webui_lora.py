@@ -11,11 +11,11 @@ ROOT=os.path.dirname(HERE)
 MODEL=os.environ.get("LORA_MODEL",r"E:\llm\train\qwen35-4b")
 ADAPTER=os.environ.get("LORA_ADAPTER",r"D:\train_out\v14\step-850")
 PORT=int(os.environ.get("LORA_PORT","8766"))
-CTX=int(os.environ.get("LORA_CTX","1800"))
+CTX=int(os.environ.get("LORA_CTX","2048"))
 MAXNEW=int(os.environ.get("LORA_MAXNEW","400"))
 TEMP=float(os.environ.get("LORA_TEMP","0.8"))
 TOPP=float(os.environ.get("LORA_TOPP","0.9"))
-REP=float(os.environ.get("LORA_REP","1.15"))
+REP=float(os.environ.get("LORA_REP","1.08"))
 KEEP=int(os.environ.get("LORA_KEEP","8"))
 
 import torch

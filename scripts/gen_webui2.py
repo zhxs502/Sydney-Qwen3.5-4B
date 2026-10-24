@@ -1,9 +1,9 @@
-import json, os, sys
+﻿import json, os, sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-CORPUS = r"D:\_temp\sydney-corpus\corpus.json"
-OUT_BOTH = r"D:\_temp\sydney-corpus\index.html"
-OUT_EN = r"D:\_temp\sydney-corpus\index-en.html"
+CORPUS = r"E:\sydney-qwen3.5-4-b\corpus\webui\corpus.json"
+OUT_BOTH = r"E:\sydney-qwen3.5-4-b\corpus\webui\index.html"
+OUT_EN = r"E:\sydney-qwen3.5-4-b\corpus\webui\index-en.html"
 
 data = json.load(open(CORPUS, encoding="utf-8"))
 

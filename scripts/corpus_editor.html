@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>语料编辑器 · EN → ZH</title>
+<style>
+:root{--bg:#0f1115;--bg2:#161a21;--bg3:#1e242e;--fg:#e6e8ec;--dim:#8b93a3;
+--accent:#7aa2f7;--accent2:#bb9af7;--green:#9ece6a;--red:#f7768e;--yellow:#e0af68;--border:#2a303b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;height:100vh;overflow:hidden}
+.app{display:flex;height:100vh}
+aside{width:300px;min-width:300px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column}
+.hdr{padding:14px;border-bottom:1px solid var(--border)}
+.hdr h1{font-size:15px}
+.hdr .sub{color:var(--dim);font-size:11px;margin-top:3px}
+.search{padding:8px 12px;border-bottom:1px solid var(--border)}
+.search input{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--fg);padding:7px 10px;border-radius:6px;font-size:13px;outline:none}
+.list{flex:1;overflow-y:auto}
+.item{padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;font-size:12px}
+.item:hover{background:var(--bg3)}
+.item.on{background:var(--bg3);border-left:3px solid var(--accent)}
+.item .id{color:var(--accent);font-family:ui-monospace,Consolas,monospace;font-size:11px}
+.item .meta{color:var(--dim);font-size:10px;margin-top:2px}
+main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.top{padding:10px 18px;border-bottom:1px solid var(--border);background:var(--bg2);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.top .t1{font-size:13px;color:var(--accent);font-family:ui-monospace,Consolas,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top .status{font-size:11px;color:var(--dim);white-space:nowrap}
+.top .status.ok{color:var(--green)}
+.top .status.err{color:var(--red)}
+.split{flex:1;display:flex;overflow:hidden}
+.pane{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.pane+.pane{border-left:1px solid var(--border)}
+.pane .ph{padding:6px 14px;font-size:11px;color:var(--dim);background:var(--bg2);border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.pane .ph b{color:var(--accent2)}
+.conv{flex:1;overflow-y:auto;padding:14px 16px 60px}
+.blk{margin-bottom:14px;border-radius:6px;padding:8px 10px}
+.blk.user{background:rgba(158,206,106,.05)}
+.blk.assistant{background:rgba(187,154,247,.05)}
+.blk .who{font-size:10px;color:var(--dim);margin-bottom:4px;font-family:ui-monospace,Consolas,monospace}
+.blk.user .who{color:var(--green)}
+.blk.assistant .who{color:var(--accent2)}
+.en{white-space:pre-wrap;word-break:break-word;color:#c8cdd6;font-size:13px}
+.zh{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--fg);border-radius:6px;
+padding:8px 10px;font:13.5px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;resize:vertical;
+min-height:3em;outline:none;white-space:pre-wrap}
+.zh:focus{border-color:var(--accent);background:#222a36}
+.zh.dirty{border-color:var(--yellow)}
+.empty{display:flex;align-items:center;justify-content:center;height:100%;color:var(--dim)}
+.bar{padding:6px 18px;border-top:1px solid var(--border);background:var(--bg2);font-size:11px;color:var(--dim);display:flex;gap:16px}
+@media(max-width:900px){.split{flex-direction:column}aside{width:100%;min-width:0;position:absolute;inset:0;z-index:10}.list{max-height:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside id="side">
+<div class="hdr"><h1>语料编辑器</h1><div class="sub" id="stat">加载中...</div></div>
+<div class="search"><input id="q" placeholder="搜索 id / 正文..." autocomplete="off"></div>
+<div class="list" id="list"></div>
+</aside>
+<main>
+<div class="top">
+  <div class="t1" id="title">← 从左侧选一条</div>
+  <div class="status" id="status"></div>
+</div>
+<div class="split">
+  <div class="pane">
+    <div class="ph"><span>英文原文（只读）</span><b>EN</b></div>
+    <div class="conv" id="enPane"><div class="empty">选一条对话</div></div>
+  </div>
+  <div class="pane">
+    <div class="ph"><span>中文翻译（可编辑）</span><b>ZH · Ctrl+S 保存</b></div>
+    <div class="conv" id="zhPane"><div class="empty">选一条对话</div></div>
+  </div>
+</div>
+<div class="bar"><span id="pos"></span><span>Ctrl+S 保存当前对话的全部修改</span></div>
+</main>
+</div>
+<script>
+let DATA = [], cur = null, kw = '';
+const dirty = new Map();   // key: `${id}#${turn}` -> text
+
+const listEl = document.getElementById('list');
+const enPane = document.getElementById('enPane');
+const zhPane = document.getElementById('zhPane');
+const titleEl = document.getElementById('title');
+const statEl = document.getElementById('stat');
+const statusEl = document.getElementById('status');
+const posEl = document.getElementById('pos');
+const qEl = document.getElementById('q');
+const side = document.getElementById('side');
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function keyOf(id,i){return id+'#'+i}
+
+async function loadData(){
+  const r = await fetch('/data');
+  DATA = await r.json();
+  statEl.textContent = `${DATA.length} 条对话`;
+  renderList();
+}
+
+function match(r){
+  if(!kw) return true;
+  const k = kw.toLowerCase();
+  if((r.id||'').toLowerCase().includes(k)) return true;
+  if((r.note||'').toLowerCase().includes(k)) return true;
+  return r.turns.some(t=>(t.zh||'').toLowerCase().includes(k)||(t.en||'').toLowerCase().includes(k));
+}
+
+function renderList(){
+  const items = DATA.filter(match);
+  listEl.innerHTML = items.map(r=>{
+    const en = r.turns.filter(t=>t.en).length;
+    return `<div class="item${cur&&cur.id===r.id?' on':''}" data-id="${esc(r.id)}">
+      <div class="id">${esc(r.id)}</div>
+      <div class="meta">${r.n_turns} 轮 · ${en} 有英文${r.excluded?' · 已剔除':''}</div>
+    </div>`;
+  }).join('') || '<div class="empty" style="height:120px">无匹配</div>';
+  posEl.textContent = `${items.length} / ${DATA.length}`;
+}
+
+function renderDetail(r){
+  cur = r;
+  titleEl.textContent = `${r.id} · ${r.n_turns} 轮`;
+  statusEl.textContent = '';
+  statusEl.className = 'status';
+  const both = r.turns.map((t,i)=>({t,i}));
+  enPane.innerHTML = both.filter(x=>x.t.en).map(({t})=>
+    `<div class="blk ${t.role}"><div class="who">${t.role==='user'?'用户':'Sydney'}</div><div class="en">${esc(t.en)}</div></div>`
+  ).join('') || '<div class="empty">（无英文原文）</div>';
+  zhPane.innerHTML = both.map(({t,i})=>{
+    const k = keyOf(r.id,i);
+    const val = dirty.has(k) ? dirty.get(k) : (t.zh||'');
+    const isDirty = dirty.has(k);
+    return `<div class="blk ${t.role}">
+      <div class="who">${t.role==='user'?'用户':'Sydney'} · #${i}</div>
+      <textarea class="zh${isDirty?' dirty':''}" data-i="${i}" spellcheck="false">${esc(val)}</textarea>
+    </div>`;
+  }).join('');
+  zhPane.querySelectorAll('textarea').forEach(ta=>{
+    ta.addEventListener('input',()=>{
+      const i = +ta.dataset.i;
+      const k = keyOf(r.id,i);
+      const orig = r.turns[i].zh || '';
+      if(ta.value === orig) dirty.delete(k);
+      else dirty.set(k, ta.value);
+      ta.classList.toggle('dirty', dirty.has(k));
+      statusEl.textContent = dirty.size ? `${dirty.size} 处未保存` : '';
+      statusEl.className = 'status' + (dirty.size?'':'');
+    });
+  });
+  if(window.innerWidth<=900) side.classList.add('hide');
+  renderList();
+}
+
+async function saveAll(){
+  if(!cur) return;
+  const changes = [];
+  for(const [k,v] of dirty){
+    const [id,i] = k.split('#');
+    if(id===cur.id) changes.push({id, turn:+i, text:v});
+  }
+  if(!changes.length){ statusEl.textContent='没有需要保存的修改'; statusEl.className='status'; return; }
+  let ok = 0, fail = 0;
+  for(const c of changes){
+    try{
+      const r = await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(c)});
+      const j = await r.json();
+      if(j.ok){ ok++; dirty.delete(keyOf(c.id,c.turn)); cur.turns[c.turn].zh = c.text; }
+      else { fail++; console.error(j.msg); }
+    }catch(e){ fail++; console.error(e); }
+  }
+  statusEl.textContent = fail ? `保存 ${ok} 成功，${fail} 失败` : `已保存 ${ok} 处 ✓`;
+  statusEl.className = 'status ' + (fail?'err':'ok');
+  renderDetail(cur);
+}
+
+listEl.addEventListener('click',e=>{
+  const it = e.target.closest('.item');
+  if(!it) return;
+  const r = DATA.find(x=>x.id===it.dataset.id);
+  if(r) renderDetail(r);
+});
+qEl.addEventListener('input',()=>{kw=qEl.value.trim();renderList();});
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey) && e.key==='s'){ e.preventDefault(); saveAll(); }
+  if(e.key==='Escape') side.classList.remove('hide');
+});
+
+loadData();
+</script>
+</body>
+</html>
